@@ -1,7 +1,7 @@
 Infinity Language
 =================
 
-Infinity language represents fusion of models that is widely used in stream processing, distributed processing and language processing. This is to present solid and unified way of modeling inter-language computations and inter-system communications under the single core langauge with fixed set of extensions. We use Coq to blueprint the language, however different parts of the system could be built using different backend languages: such as Erlang, Rust, Clang, Futhark, Julia, etc. This thing should cover both GPU and AVX processing and provide robust and verified distributed environment with process and channels runtime.
+Infinity language represents fusion of models that are widely used in stream processing, distributed processing and language processing. This is to present solid and unified way of modeling inter-language computations and inter-system communications under the single core langauge with fixed set of extensions. We use Coq to blueprint the language, however different parts of the system could be built using different backend languages: such as Erlang, Rust, Clang, Futhark, Julia, etc. This thing should cover both GPU and AVX processing and provide robust and verified distributed environment with process and channels runtime.
 
 Simple Lambda Calculus
 ----------------------
