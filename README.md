@@ -8,21 +8,45 @@ distributed systems, data storages and stream processing, the core
 two languages: pi calculus and stream calculus discovered to be
 connected and being driven by a language with quantifiers as a primitives.
 
+Infinity is a dependently typed language for stream processing,
+distributed processing and text processing. We use Coq to prototype
+the standard library including the theories needed to be able to
+prove code invariants instead of testing them. Infinity is a source
+to source translator that lets you use different languages at runtime:
+Erlang, Rust, Clang, Futhark, Julia, etc.
+
+Infinity language presents a solid and unified way of modeling inter-language
+computations and inter-system communications within a single language with
+compact core. We strive for utilizing parallel hardware such as GPU and
+SSE/AVX SIMD instructions and providing a robust and verified distributed
+environment with process and channels runtime.
+
 Simple Lambda Calculus
 ----------------------
 
 Simple lambda calculus was discovered by Church as computational model of functions.
 This is the simplest model of lambda calculus in lambda cube, also it suffers from paradoxes.
-To help escape this the simple typed lambda caclulus was invented. While being primitive
-simple lambda calculus is widely used in interpreters: such as JavaScript (all modern browsers),
-Erlang (Ericsson), K (Kx Systems) and other shells.
+To help escape this the simple typed lambda caclulus was invented.
+
+The Simple Lambda Calculus is used to model dynamic interpreted
+target languages such as JavaScript, Erlang, Lua, K and other shells.
+A total fragment of call by value lambda calculus is used in the optimizer
+as a runtime model. Translation to dynamic languages requires type erasure in
+addition to syntactic transformations.
 
 Hindley-Milner Type System
 --------------------------
 
-Hindley-Milner type system introduced type arrows or type quantifiers.
-It allows type inference and could encode recursion and corecursion.
-This is widely used in production and known as System F.
+A Hindley-Milner type system is used to model static target languages such as C++ or Rust.
+The system models certain features of low-level languages such as unboxed
+types and non-first-class instantiation-based polymorphism pretty well.
+The completeness and modularity of type inference lets the code generator
+reconstruct the native types of the target language.
+
+While Hindley-Milner systems in general and the particular set of extensions
+used are pretty limited compared to System F, the chosen type system still
+allows to model native effects and translate structural recursion and
+corecursion into native iteration.
 
 MLTT
 ----
